@@ -6,13 +6,22 @@ const noteListEl = document.getElementById("noteList");
 
 let currKey;
 
+<!-- Initialize Quill editor -->
+const options = {
+  placeholder: 'Compose an epic...',
+  theme: 'snow'
+};
+const quill = new Quill('#noteContentContainer', options);
+
 // Save new note into local storage and reloads page to re-render
 const saveNote = () => {
   const noteTitle = noteTitleInputEl.value;
-  const noteContent = noteContentInputEl.value;
+  // const noteContent = noteContentInputEl.value;
+  const noteContent = quill.getText();
 
   const newNote = {
     title: noteTitle,
+    // content: noteContent,
     content: noteContent
   }
 
@@ -41,7 +50,8 @@ const selectNote = (key) => {
   let currNote = JSON.parse(localStorage.getItem(key.id));
   currKey = key.id;
   noteTitleInputEl.value = currNote.title;
-  noteContentInputEl.value = currNote.content;
+  // noteContentInputEl.value = currNote.content;
+  quill.setText(currNote.content);
   document.getElementById("saveNoteBtn").innerHTML =
   "<i class=\"bi-save\"></i>\n" +
       "            <p>Edit Note</p>";
@@ -49,11 +59,31 @@ const selectNote = (key) => {
 
 const addNote = () => {
   noteTitleInputEl.value = "New Note Title";
-  noteContentInputEl.value = "Example Content";
+  // noteContentInputEl.value = "Example Content";
+  quill.setText("Add stuff to your note here!");
   currKey = "note"+localStorage.length;
   document.getElementById("saveNoteBtn").innerHTML =
       "<i class=\"bi-save\"></i>\n" +
       "            <p>Save Note</p>";
+}
+
+const downloadFile = () => {
+  const downloadURI = (uri, name) => {
+    let link = document.createElement("a");
+    link.download = name;
+    link.href = uri;
+    link.click();
+  }
+
+  let fileArr = [];
+  let fileContent = "";
+  for(let i=0; i < localStorage.length; i++){
+    let currNote = localStorage.getItem(localStorage.key(i));
+    fileContent += currNote;
+  }
+  const file = new File(fileArr, "notes.txt", {type: "text/plain"});
+  const fileUrl = URL.createObjectURL(file);
+  downloadURI(fileUrl, "notes.txt");
 }
 
 window.onload = () => {
@@ -67,5 +97,6 @@ window.onload = () => {
         "<i class='bi-circle'></i><p>" + title + "</p></div>";
   }
   noteTitleInputEl.value = "Empty";
-  noteContentInputEl.value = "Empty";
+  // noteContentInputEl.value = "Empty";
+  quill.setText("Empty");
 }

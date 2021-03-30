@@ -6,16 +6,16 @@
   display: flex;
   min-height: 100vh;
 }
-.mainBody p, .mainBody h3 {
-  color: white;
-  margin: 0;
-}
 .mainBody .leftCol {
   display: flex;
   flex-direction: column;
   width: 20%;
   background-color: #14213d;
   padding: 1rem;
+}
+.mainBody .leftCol p, .mainBody .leftCol h3 {
+  color: white;
+  margin: 0;
 }
 .mainBody .leftCol #header {
   padding-bottom: 1rem;
@@ -68,12 +68,43 @@
 .mainBody .leftCol #sidebar .noteList .note p {
   align-self: center;
 }
+.mainBody .leftCol #sidebar #downloadBtnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+.mainBody .leftCol #sidebar #downloadBtnContainer #downloadBtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  background-color: #fca311;
+}
+.mainBody .leftCol #sidebar #downloadBtnContainer #downloadBtn i {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #14213d;
+  margin-right: 0.5rem;
+}
+.mainBody .leftCol #sidebar #downloadBtnContainer #downloadBtn p {
+  margin-left: 0.5rem;
+  font-weight: bold;
+  color: #14213d;
+}
+.mainBody .leftCol #sidebar #downloadBtnContainer #downloadBtn:hover {
+  cursor: pointer;
+}
 .mainBody .rightCol {
   display: flex;
   flex-direction: column;
   width: 100%;
   background-color: #e5e5e5;
   padding: 2rem;
+}
+.mainBody .rightCol #noteTitle {
+  margin-bottom: 1rem;
 }
 .mainBody .rightCol #noteTitle #noteTitleInput {
   border: 0;
@@ -104,9 +135,15 @@
   color: #14213d !important;
   opacity: 1;
 }
+.mainBody .rightCol .ql-toolbar {
+  width: min(50vw);
+}
 .mainBody .rightCol #noteContentContainer {
   display: flex;
-  padding: 1rem 0;
+  width: min(50vw);
+}
+.mainBody .rightCol #noteContentContainer p {
+  font-size: larger;
 }
 .mainBody .rightCol #noteContentContainer #noteContentInput {
   border: 1px solid #14213d;
@@ -120,10 +157,10 @@
 }
 .mainBody .rightCol #saveNoteBtn {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
   width: 30%;
+  margin-top: 3rem;
   padding: 0.5rem 1rem;
   background-color: #fca311;
 }
@@ -135,6 +172,7 @@
 }
 .mainBody .rightCol #saveNoteBtn p {
   margin-left: 0.5rem;
+  margin-bottom: 0;
   font-weight: bold;
   color: #14213d;
 }
@@ -149,12 +187,11 @@
 @media screen and (max-width: 480px) {
   .mainBody {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     background-color: teal;
   }
   .mainBody .leftCol {
-    width: 10rem;
-    background-color: lavender;
+    background-color: black;
   }
   .mainBody .rightCol {
     background-color: palegreen;

@@ -6,11 +6,6 @@
   display: flex;
   min-height: 100vh;
 
-  p, h3 {
-    color: white;
-    margin: 0;
-  }
-
   .leftCol {
     display: flex;
     flex-direction: column;
@@ -18,6 +13,10 @@
     background-color: #14213d;
     padding: 1rem;
 
+    p, h3 {
+      color: white;
+      margin: 0;
+    }
 
     #header {
       padding-bottom: 1rem;
@@ -72,6 +71,36 @@
           }
         }
       }
+
+      #downloadBtnContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 0;
+        #downloadBtn {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          padding: 0.5rem 1rem;
+          background-color: #fca311;
+          i {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #14213d;
+            margin-right: 0.5rem;
+          }
+          p {
+            margin-left: 0.5rem;
+            font-weight: bold;
+            color : #14213d;
+          }
+        }
+        #downloadBtn:hover {
+          cursor: pointer;
+        }
+      }
+
     }
   }
 
@@ -83,6 +112,7 @@
     padding: 2rem;
 
     #noteTitle {
+      margin-bottom: 1rem;
       #noteTitleInput {
         border: 0;
         border-bottom: 1px solid #14213d;
@@ -114,9 +144,17 @@
       }
     }
 
+    .ql-toolbar {
+      width: min(50vw);
+    }
+
     #noteContentContainer {
       display: flex;
-      padding: 1rem 0;
+      width: min(50vw);
+
+      p {
+        font-size: larger;
+      }
 
       #noteContentInput {
         border: 1px solid #14213d;
@@ -132,10 +170,10 @@
 
     #saveNoteBtn {
       display: flex;
-      flex-direction: row;
       align-items: center;
       justify-content: center;
       width: 30%;
+      margin-top: 3rem;
       padding: 0.5rem 1rem;
       background-color: #fca311;
       i {
@@ -146,6 +184,7 @@
       }
       p {
         margin-left: 0.5rem;
+        margin-bottom: 0;
         font-weight: bold;
         color : #14213d;
       }
@@ -170,12 +209,11 @@
 @media screen and (max-width: 480px){
   .mainBody {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     background-color: teal;
 
     .leftCol {
-      width: 10rem;
-      background-color: lavender;
+      background-color: black;
     }
 
     .rightCol {
