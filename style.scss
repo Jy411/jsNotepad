@@ -1,0 +1,185 @@
+* {
+  font-family: 'Author', sans-serif;
+}
+
+.mainBody {
+  display: flex;
+  min-height: 100vh;
+
+  p, h3 {
+    color: white;
+    margin: 0;
+  }
+
+  .leftCol {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    background-color: #14213d;
+    padding: 1rem;
+
+
+    #header {
+      padding-bottom: 1rem;
+    }
+
+    #sidebar {
+      display: flex;
+      flex-direction: column;
+
+      #addNoteBtnContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 1rem;
+        #addNoteBtn {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          padding: 0.5rem 1rem;
+          background-color: #fca311;
+          i {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #14213d;
+            margin-right: 0.5rem;
+          }
+          p {
+            margin-left: 0.5rem;
+            font-weight: bold;
+            color : #14213d;
+          }
+        }
+        #addNoteBtn:hover {
+          cursor: pointer;
+        }
+      }
+
+      .noteList {
+        display: flex;
+        flex-direction: column;
+        .note {
+          display: flex;
+          i {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #fca311;
+            padding-right: 0.5rem;
+          }
+          p {
+            align-self: center;
+          }
+        }
+      }
+    }
+  }
+
+  .rightCol {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #e5e5e5;
+    padding: 2rem;
+
+    #noteTitle {
+      #noteTitleInput {
+        border: 0;
+        border-bottom: 1px solid #14213d;
+        background-color: inherit;
+        font-size: x-large;
+        font-weight: bold;
+        color: #14213d;
+      }
+      #noteTitleInput:focus {
+        outline: 0;
+      }
+      ::-webkit-input-placeholder {
+        font-size: x-large;
+        font-weight: bold;
+        color: #14213d !important;
+        opacity: 1;
+      }
+      ::-moz-placeholder {
+        font-size: x-large;
+        font-weight: bold;
+        color: #14213d !important;
+        opacity: 1;
+      }
+      ::placeholder {
+        font-size: x-large;
+        font-weight: bold;
+        color: #14213d !important;
+        opacity: 1;
+      }
+    }
+
+    #noteContentContainer {
+      display: flex;
+      padding: 1rem 0;
+
+      #noteContentInput {
+        border: 1px solid #14213d;
+        border-radius: 5px;
+        background-color: inherit;
+        padding: 1rem;
+        resize: none;
+      }
+      #noteContentInput:focus {
+        outline: 0 !important;
+      }
+    }
+
+    #saveNoteBtn {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 30%;
+      padding: 0.5rem 1rem;
+      background-color: #fca311;
+      i {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #14213d;
+        margin-right: 0.5rem;
+      }
+      p {
+        margin-left: 0.5rem;
+        font-weight: bold;
+        color : #14213d;
+      }
+    }
+    #saveNoteBtn:hover {
+      cursor: pointer;
+    }
+
+    #noNoteContainer {
+      p {
+        font-size: x-large;
+        color: #14213d;
+      }
+    }
+
+  }
+
+}
+
+// Mobile Design
+
+@media screen and (max-width: 480px){
+  .mainBody {
+    display: flex;
+    justify-content: space-between;
+    background-color: teal;
+
+    .leftCol {
+      width: 10rem;
+      background-color: lavender;
+    }
+
+    .rightCol {
+      background-color: palegreen;
+    }
+  }
+}

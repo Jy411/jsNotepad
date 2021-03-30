@@ -1,0 +1,164 @@
+* {
+  font-family: "Author", sans-serif;
+}
+
+.mainBody {
+  display: flex;
+  min-height: 100vh;
+}
+.mainBody p, .mainBody h3 {
+  color: white;
+  margin: 0;
+}
+.mainBody .leftCol {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  background-color: #14213d;
+  padding: 1rem;
+}
+.mainBody .leftCol #header {
+  padding-bottom: 1rem;
+}
+.mainBody .leftCol #sidebar {
+  display: flex;
+  flex-direction: column;
+}
+.mainBody .leftCol #sidebar #addNoteBtnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+.mainBody .leftCol #sidebar #addNoteBtnContainer #addNoteBtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  background-color: #fca311;
+}
+.mainBody .leftCol #sidebar #addNoteBtnContainer #addNoteBtn i {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #14213d;
+  margin-right: 0.5rem;
+}
+.mainBody .leftCol #sidebar #addNoteBtnContainer #addNoteBtn p {
+  margin-left: 0.5rem;
+  font-weight: bold;
+  color: #14213d;
+}
+.mainBody .leftCol #sidebar #addNoteBtnContainer #addNoteBtn:hover {
+  cursor: pointer;
+}
+.mainBody .leftCol #sidebar .noteList {
+  display: flex;
+  flex-direction: column;
+}
+.mainBody .leftCol #sidebar .noteList .note {
+  display: flex;
+}
+.mainBody .leftCol #sidebar .noteList .note i {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #fca311;
+  padding-right: 0.5rem;
+}
+.mainBody .leftCol #sidebar .noteList .note p {
+  align-self: center;
+}
+.mainBody .rightCol {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #e5e5e5;
+  padding: 2rem;
+}
+.mainBody .rightCol #noteTitle #noteTitleInput {
+  border: 0;
+  border-bottom: 1px solid #14213d;
+  background-color: inherit;
+  font-size: x-large;
+  font-weight: bold;
+  color: #14213d;
+}
+.mainBody .rightCol #noteTitle #noteTitleInput:focus {
+  outline: 0;
+}
+.mainBody .rightCol #noteTitle ::-webkit-input-placeholder {
+  font-size: x-large;
+  font-weight: bold;
+  color: #14213d !important;
+  opacity: 1;
+}
+.mainBody .rightCol #noteTitle ::-moz-placeholder {
+  font-size: x-large;
+  font-weight: bold;
+  color: #14213d !important;
+  opacity: 1;
+}
+.mainBody .rightCol #noteTitle ::placeholder {
+  font-size: x-large;
+  font-weight: bold;
+  color: #14213d !important;
+  opacity: 1;
+}
+.mainBody .rightCol #noteContentContainer {
+  display: flex;
+  padding: 1rem 0;
+}
+.mainBody .rightCol #noteContentContainer #noteContentInput {
+  border: 1px solid #14213d;
+  border-radius: 5px;
+  background-color: inherit;
+  padding: 1rem;
+  resize: none;
+}
+.mainBody .rightCol #noteContentContainer #noteContentInput:focus {
+  outline: 0 !important;
+}
+.mainBody .rightCol #saveNoteBtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  padding: 0.5rem 1rem;
+  background-color: #fca311;
+}
+.mainBody .rightCol #saveNoteBtn i {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #14213d;
+  margin-right: 0.5rem;
+}
+.mainBody .rightCol #saveNoteBtn p {
+  margin-left: 0.5rem;
+  font-weight: bold;
+  color: #14213d;
+}
+.mainBody .rightCol #saveNoteBtn:hover {
+  cursor: pointer;
+}
+.mainBody .rightCol #noNoteContainer p {
+  font-size: x-large;
+  color: #14213d;
+}
+
+@media screen and (max-width: 480px) {
+  .mainBody {
+    display: flex;
+    justify-content: space-between;
+    background-color: teal;
+  }
+  .mainBody .leftCol {
+    width: 10rem;
+    background-color: lavender;
+  }
+  .mainBody .rightCol {
+    background-color: palegreen;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
