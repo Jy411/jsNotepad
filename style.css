@@ -155,12 +155,14 @@
 .mainBody .rightCol #noteContentContainer #noteContentInput:focus {
   outline: 0 !important;
 }
+.mainBody .rightCol #charCount {
+  margin-bottom: 2rem;
+}
 .mainBody .rightCol #saveNoteBtn {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 30%;
-  margin-top: 3rem;
   padding: 0.5rem 1rem;
   background-color: #fca311;
 }
@@ -188,13 +190,46 @@
   .mainBody {
     display: flex;
     flex-direction: column;
-    background-color: teal;
   }
   .mainBody .leftCol {
-    background-color: black;
+    background-color: #14213d;
+    width: 100vw;
+    flex-grow: 1;
   }
   .mainBody .rightCol {
-    background-color: palegreen;
+    background-color: #e5e5e5;
+    width: 100vw;
+    flex-grow: 1;
+  }
+  .mainBody .rightCol .ql-toolbar {
+    width: min(80vw);
+  }
+  .mainBody .rightCol #noteContentContainer {
+    width: min(80vw);
+    flex-grow: 1;
+  }
+  .mainBody .rightCol #saveNoteBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+    padding: 0.5rem 1rem;
+    background-color: #fca311;
+  }
+  .mainBody .rightCol #saveNoteBtn i {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #14213d;
+    margin-right: 0.5rem;
+  }
+  .mainBody .rightCol #saveNoteBtn p {
+    margin-left: 0.5rem;
+    margin-bottom: 0;
+    font-weight: bold;
+    color: #14213d;
+  }
+  .mainBody .rightCol #saveNoteBtn:hover {
+    cursor: pointer;
   }
 }
 

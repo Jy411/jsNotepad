@@ -16,8 +16,7 @@ const quill = new Quill('#noteContentContainer', options);
 // Save new note into local storage and reloads page to re-render
 const saveNote = () => {
   const noteTitle = noteTitleInputEl.value;
-  // const noteContent = noteContentInputEl.value;
-  const noteContent = quill.getText();
+  const noteContent = quill.getContents();
 
   const newNote = {
     title: noteTitle,
@@ -25,21 +24,11 @@ const saveNote = () => {
     content: noteContent
   }
 
-  console.log("saveNote");
-  console.log("currKey");
-  console.log(currKey);
-
   // If local storage contains key already
   if (localStorage.getItem(currKey) != null) {
     // update note
-    console.log("key here");
-    console.log("currKey");
-    console.log(currKey);
     localStorage.setItem(currKey, JSON.stringify(newNote));
   } else {
-    console.log("key NOT here");
-    console.log("currKey");
-    console.log(currKey);
     currKey = "note"+localStorage.length;
     localStorage.setItem(currKey, JSON.stringify(newNote));
   }
@@ -51,16 +40,16 @@ const selectNote = (key) => {
   currKey = key.id;
   noteTitleInputEl.value = currNote.title;
   // noteContentInputEl.value = currNote.content;
-  quill.setText(currNote.content);
+  quill.setContents(currNote.content);
   document.getElementById("saveNoteBtn").innerHTML =
-  "<i class=\"bi-save\"></i>\n" +
+  "<i class=\"bi-pencil\"></i>\n" +
       "            <p>Edit Note</p>";
 }
 
 const addNote = () => {
   noteTitleInputEl.value = "New Note Title";
   // noteContentInputEl.value = "Example Content";
-  quill.setText("Add stuff to your note here!");
+  quill.setContents("Add stuff to your note here!");
   currKey = "note"+localStorage.length;
   document.getElementById("saveNoteBtn").innerHTML =
       "<i class=\"bi-save\"></i>\n" +
@@ -99,4 +88,14 @@ window.onload = () => {
   noteTitleInputEl.value = "Empty";
   // noteContentInputEl.value = "Empty";
   quill.setText("Empty");
+
+  let charCount = 0;
+
+  quill.on(("text-change"), () => {
+    console.log("change!");
+    charCount = quill.getLength();
+    document.getElementById("charCount").innerHTML =
+        "<p>Number of Characters: "+ charCount +"</p>"
+  })
+
 }

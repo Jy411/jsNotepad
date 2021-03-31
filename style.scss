@@ -168,12 +168,15 @@
       }
     }
 
+    #charCount {
+      margin-bottom: 2rem;
+    }
+
     #saveNoteBtn {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 30%;
-      margin-top: 3rem;
       padding: 0.5rem 1rem;
       background-color: #fca311;
       i {
@@ -205,19 +208,54 @@
 }
 
 // Mobile Design
-
 @media screen and (max-width: 480px){
   .mainBody {
     display: flex;
     flex-direction: column;
-    background-color: teal;
 
     .leftCol {
-      background-color: black;
+      background-color: #14213d;
+      width: 100vw;
+      flex-grow: 1;
     }
 
     .rightCol {
-      background-color: palegreen;
+      background-color: #e5e5e5;
+      width: 100vw;
+      flex-grow: 1;
+
+      .ql-toolbar {
+        width: min(80vw);
+      }
+
+      #noteContentContainer {
+        width: min(80vw);
+        flex-grow: 1;
+      }
+
+      #saveNoteBtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80vw;
+        padding: 0.5rem 1rem;
+        background-color: #fca311;
+        i {
+          font-size: 1.25rem;
+          font-weight: bold;
+          color: #14213d;
+          margin-right: 0.5rem;
+        }
+        p {
+          margin-left: 0.5rem;
+          margin-bottom: 0;
+          font-weight: bold;
+          color : #14213d;
+        }
+      }
+      #saveNoteBtn:hover {
+        cursor: pointer;
+      }
     }
   }
 }
