@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Noted</title>
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <!--    <link rel="icon" type="image/x-icon" href="./favicon.ico">-->
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -41,9 +41,7 @@
                 </div>
             </div>
 
-
             <div class="noteList" id="noteList"></div>
-
 
             <div id="downloadBtnContainer" onclick="downloadFile()">
                 <div id="downloadBtn">
@@ -52,23 +50,18 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     <div class="rightCol" id="rightCol">
         <div id="noteTitle">
+            <label for="noteTitleInput"></label>
             <input id="noteTitleInput"
                    name="noteTitle"
                    type="text"
                    contenteditable="true"
                    placeholder="Note Title" />
         </div>
-        <div id="noteContentContainer">
-<!--            <textarea id="noteContentInput"-->
-<!--                      name="noteContent"-->
-<!--                      rows="10" cols="50"-->
-<!--                      placeholder="Type here..."></textarea>-->
-        </div>
+        <div id="noteContentContainer"></div>
         <div id="charCount">
             <p>Number of Characters: 0</p>
         </div>
@@ -84,11 +77,6 @@
         </div>
     </div>
 </div>
-
-
-
-
-
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

@@ -1,5 +1,3 @@
-const saveNoteBtnEl = document.getElementById("saveNoteBtn");
-const noteContentInputEl = document.getElementById("noteContentInput");
 const noteTitleInputEl = document.getElementById("noteTitleInput");
 
 const noteListEl = document.getElementById("noteList");
@@ -20,12 +18,11 @@ const saveNote = () => {
 
   const newNote = {
     title: noteTitle,
-    // content: noteContent,
     content: noteContent
   }
 
   // If local storage contains key already
-  if (localStorage.getItem(currKey) != null) {
+  if (localStorage.getItem(currKey)) {
     // update note
     localStorage.setItem(currKey, JSON.stringify(newNote));
   } else {
@@ -46,7 +43,6 @@ const selectNote = (key) => {
   let currNote = JSON.parse(localStorage.getItem(key.id));
   currKey = key.id;
   noteTitleInputEl.value = currNote.title;
-  // noteContentInputEl.value = currNote.content;
   quill.setContents(currNote.content);
   document.getElementById("saveNoteBtn").innerHTML =
   "<i class=\"bi-pencil\"></i>\n" +
@@ -56,7 +52,6 @@ const selectNote = (key) => {
 
 const addNote = () => {
   noteTitleInputEl.value = "New Note Title";
-  // noteContentInputEl.value = "Example Content";
   quill.setContents("Add stuff to your note here!");
   currKey = "note"+localStorage.length;
   document.getElementById("saveNoteBtn").innerHTML =
