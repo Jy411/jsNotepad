@@ -135,12 +135,8 @@
   color: #14213d !important;
   opacity: 1;
 }
-.mainBody .rightCol .ql-toolbar {
-  width: min(50vw);
-}
 .mainBody .rightCol #noteContentContainer {
   display: flex;
-  width: min(50vw);
 }
 .mainBody .rightCol #noteContentContainer p {
   font-size: larger;
@@ -156,29 +152,34 @@
   outline: 0 !important;
 }
 .mainBody .rightCol #charCount {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
-.mainBody .rightCol #saveNoteBtn {
+.mainBody .rightCol #btnContainer {
+  display: flex;
+  justify-content: space-around;
+}
+.mainBody .rightCol #btnContainer #saveNoteBtn, .mainBody .rightCol #btnContainer #deleteNoteBtn {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 30%;
   padding: 0.5rem 1rem;
+  margin: 1rem 0;
   background-color: #fca311;
 }
-.mainBody .rightCol #saveNoteBtn i {
+.mainBody .rightCol #btnContainer #saveNoteBtn i, .mainBody .rightCol #btnContainer #deleteNoteBtn i {
   font-size: 1.25rem;
   font-weight: bold;
   color: #14213d;
   margin-right: 0.5rem;
 }
-.mainBody .rightCol #saveNoteBtn p {
+.mainBody .rightCol #btnContainer #saveNoteBtn p, .mainBody .rightCol #btnContainer #deleteNoteBtn p {
   margin-left: 0.5rem;
   margin-bottom: 0;
   font-weight: bold;
   color: #14213d;
 }
-.mainBody .rightCol #saveNoteBtn:hover {
+.mainBody .rightCol #btnContainer #saveNoteBtn:hover, .mainBody .rightCol #btnContainer #deleteNoteBtn:hover {
   cursor: pointer;
 }
 .mainBody .rightCol #noNoteContainer p {
@@ -208,7 +209,7 @@
     width: min(80vw);
     flex-grow: 1;
   }
-  .mainBody .rightCol #saveNoteBtn {
+  .mainBody .rightCol #saveNoteBtn #deleteNoteBtn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -216,19 +217,19 @@
     padding: 0.5rem 1rem;
     background-color: #fca311;
   }
-  .mainBody .rightCol #saveNoteBtn i {
+  .mainBody .rightCol #saveNoteBtn #deleteNoteBtn i {
     font-size: 1.25rem;
     font-weight: bold;
     color: #14213d;
     margin-right: 0.5rem;
   }
-  .mainBody .rightCol #saveNoteBtn p {
+  .mainBody .rightCol #saveNoteBtn #deleteNoteBtn p {
     margin-left: 0.5rem;
     margin-bottom: 0;
     font-weight: bold;
     color: #14213d;
   }
-  .mainBody .rightCol #saveNoteBtn:hover {
+  .mainBody .rightCol #saveNoteBtn:hover, .mainBody .rightCol #deleteNoteBtn:hover {
     cursor: pointer;
   }
 }

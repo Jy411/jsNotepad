@@ -35,6 +35,13 @@ const saveNote = () => {
   location.reload();
 }
 
+const deleteNote = () => {
+  if (localStorage.getItem(currKey)) {
+    localStorage.removeItem(currKey);
+    location.reload();
+  }
+}
+
 const selectNote = (key) => {
   let currNote = JSON.parse(localStorage.getItem(key.id));
   currKey = key.id;
@@ -44,6 +51,7 @@ const selectNote = (key) => {
   document.getElementById("saveNoteBtn").innerHTML =
   "<i class=\"bi-pencil\"></i>\n" +
       "            <p>Edit Note</p>";
+  document.getElementById("deleteNoteBtn").hidden = false;
 }
 
 const addNote = () => {
@@ -54,6 +62,7 @@ const addNote = () => {
   document.getElementById("saveNoteBtn").innerHTML =
       "<i class=\"bi-save\"></i>\n" +
       "            <p>Save Note</p>";
+  document.getElementById("deleteNoteBtn").hidden = false;
 }
 
 const downloadFile = () => {
@@ -86,16 +95,19 @@ window.onload = () => {
         "<i class='bi-circle'></i><p>" + title + "</p></div>";
   }
   noteTitleInputEl.value = "Empty";
-  // noteContentInputEl.value = "Empty";
   quill.setText("Empty");
 
+  // Update character count
   let charCount = 0;
-
   quill.on(("text-change"), () => {
-    console.log("change!");
     charCount = quill.getLength();
     document.getElementById("charCount").innerHTML =
         "<p>Number of Characters: "+ charCount +"</p>"
   })
+
+  // If no key
+  if (!localStorage.getItem(currKey)) {
+    document.getElementById("deleteNoteBtn").hidden = true;
+  }
 
 }

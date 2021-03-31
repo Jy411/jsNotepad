@@ -144,13 +144,13 @@
       }
     }
 
-    .ql-toolbar {
-      width: min(50vw);
-    }
+    //.ql-toolbar {
+    //  width: min(50vw);
+    //}
 
     #noteContentContainer {
       display: flex;
-      width: min(50vw);
+      //width: min(50vw);
 
       p {
         font-size: larger;
@@ -169,31 +169,36 @@
     }
 
     #charCount {
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
 
-    #saveNoteBtn {
+    #btnContainer {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 30%;
-      padding: 0.5rem 1rem;
-      background-color: #fca311;
-      i {
-        font-size: 1.25rem;
-        font-weight: bold;
-        color: #14213d;
-        margin-right: 0.5rem;
+      justify-content: space-around;
+      #saveNoteBtn, #deleteNoteBtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30%;
+        padding: 0.5rem 1rem;
+        margin: 1rem 0;
+        background-color: #fca311;
+        i {
+          font-size: 1.25rem;
+          font-weight: bold;
+          color: #14213d;
+          margin-right: 0.5rem;
+        }
+        p {
+          margin-left: 0.5rem;
+          margin-bottom: 0;
+          font-weight: bold;
+          color : #14213d;
+        }
       }
-      p {
-        margin-left: 0.5rem;
-        margin-bottom: 0;
-        font-weight: bold;
-        color : #14213d;
+      #saveNoteBtn:hover, #deleteNoteBtn:hover {
+        cursor: pointer;
       }
-    }
-    #saveNoteBtn:hover {
-      cursor: pointer;
     }
 
     #noNoteContainer {
@@ -233,7 +238,7 @@
         flex-grow: 1;
       }
 
-      #saveNoteBtn {
+      #saveNoteBtn #deleteNoteBtn {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -253,7 +258,7 @@
           color : #14213d;
         }
       }
-      #saveNoteBtn:hover {
+      #saveNoteBtn:hover, #deleteNoteBtn:hover {
         cursor: pointer;
       }
     }

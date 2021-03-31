@@ -72,9 +72,15 @@
         <div id="charCount">
             <p>Number of Characters: 0</p>
         </div>
-        <div id="saveNoteBtn" onclick="saveNote()">
-            <i class="bi-save"></i>
-            <p>Save Note</p>
+        <div id="btnContainer">
+            <div id="saveNoteBtn" onclick="saveNote()">
+                <i class="bi-save"></i>
+                <p>Save Note</p>
+            </div>
+            <div id="deleteNoteBtn" onclick="deleteNote()">
+                <i class="bi-x-circle"></i>
+                <p>Delete Note</p>
+            </div>
         </div>
     </div>
 </div>
@@ -95,7 +101,6 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 <!-- JavaScript -->
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>
