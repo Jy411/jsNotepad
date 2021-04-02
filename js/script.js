@@ -74,6 +74,7 @@ const downloadFile = () => {
     let currNote = localStorage.getItem(localStorage.key(i));
     fileContent += currNote;
   }
+  fileArr.push(fileContent);
   const file = new File(fileArr, "notes.txt", {type: "text/plain"});
   const fileUrl = URL.createObjectURL(file);
   downloadURI(fileUrl, "notes.txt");
