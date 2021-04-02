@@ -135,8 +135,12 @@
   color: #14213d !important;
   opacity: 1;
 }
+.mainBody .rightCol .ql-toolbar {
+  background-color: white;
+}
 .mainBody .rightCol #noteContentContainer {
   display: flex;
+  background-color: white;
 }
 .mainBody .rightCol #noteContentContainer p {
   font-size: larger;

@@ -144,13 +144,13 @@
       }
     }
 
-    //.ql-toolbar {
-    //  width: min(50vw);
-    //}
+    .ql-toolbar {
+      background-color: white;
+    }
 
     #noteContentContainer {
       display: flex;
-      //width: min(50vw);
+      background-color: white;
 
       p {
         font-size: larger;
