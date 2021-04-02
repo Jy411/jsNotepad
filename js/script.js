@@ -92,12 +92,18 @@ window.onload = () => {
   noteTitleInputEl.value = "Empty";
   quill.setText("Empty");
 
-  // Update character count
+  // Update character / word count
   let charCount = 0;
+  let wordCount = 0;
   quill.on(("text-change"), () => {
     charCount = quill.getLength();
+    let text = quill.getText();
+    let textArr = text.split(" ");
+    wordCount = textArr.length - 1;
+
     document.getElementById("charCount").innerHTML =
-        "<p>Number of Characters: "+ charCount +"</p>"
+        "<p>Number of Characters: "+ charCount +"</p>" +
+        "<p>Number of Words: "+ wordCount +"</p>"
   })
 
   // If no key
